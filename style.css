@@ -1,0 +1,182 @@
+/* ==============================
+IPU CGPA Calculator Specific Css Start
+============================== */
+:root {
+    --ipu-cgpa-calc-accent: #4361ee;
+    --ipu-cgpa-calc-accent-deep: #3a56d4;
+    --ipu-cgpa-calc-accent-light: #e6f0ff;
+    --ipu-cgpa-calc-text: #2b2d42;
+    --ipu-cgpa-calc-bg: #f8f9fa;
+    --ipu-cgpa-calc-white: #ffffff;
+    --ipu-cgpa-calc-border: #e0e3e7;
+    --ipu-cgpa-calc-danger: #e74c3c;
+    --ipu-cgpa-calc-success: #2ecc71;
+    --ipu-cgpa-calc-radius: 3px;
+    --ipu-cgpa-calc-spacing: 1.5rem;
+    --ipu-cgpa-calc-gap: 0.65rem;
+  }
+  *{
+      box-sizing: border-box;
+      font-family: "Rubik", sans-serif;
+  }
+  .ipu-cgpa-calc-section {
+    background-color: var(--ipu-cgpa-calc-white);
+    border: 1px solid var(--ipu-cgpa-calc-border);
+    border-radius: var(--ipu-cgpa-calc-radius);
+    padding: var(--ipu-cgpa-calc-spacing);
+  }
+  
+  .ipu-cgpa-calc-section > h3 {
+    margin-top: 0;
+    color: var(--ipu-cgpa-calc-accent-deep) !important;
+  }
+  
+  .ipu-cgpa-calc-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ipu-cgpa-calc-gap);
+    margin-bottom: var(--ipu-cgpa-calc-gap);
+  }
+  
+  .ipu-cgpa-calc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--ipu-cgpa-calc-gap);
+    align-items: center;
+  }
+  
+  .ipu-cgpa-calc-row .ipu-cgpa-calc-remove-btn {
+    height: 45px !important;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    color: var(--ipu-cgpa-calc-white) !important;
+    background-color: var(--ipu-cgpa-calc-danger) !important;
+    border: none;
+    border-radius: var(--ipu-cgpa-calc-radius);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .ipu-cgpa-calc-row .ipu-cgpa-calc-remove-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .ipu-cgpa-calc-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--ipu-cgpa-calc-gap);
+    margin-top: var(--ipu-cgpa-calc-spacing);
+  }
+  /* ===== Resutl section ===== */
+  .ipu-cgpa-calc-result {
+    margin-top: var(--ipu-cgpa-calc-spacing);
+    padding: var(--ipu-cgpa-calc-gap);
+    border: 1px solid var(--ipu-cgpa-calc-border);
+    border-radius: var(--ipu-cgpa-calc-radius);
+    background-color: var(--ipu-cgpa-calc-accent-light);
+    color: var(--ipu-cgpa-calc-text);
+    display: none;
+    overflow-x: auto;
+  }
+  
+  .ipu-cgpa-calc-result strong {
+    color: var(--ipu-cgpa-calc-accent-deep) !important;
+  }
+  .ipu-cgpa-calc-result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: var(--ipu-cgpa-calc-radius);
+    overflow: hidden;
+  }
+  
+  .ipu-cgpa-calc-result thead {
+    background-color: var(--ipu-cgpa-calc-accent) !important;
+    color: var(--ipu-cgpa-calc-white);
+  }
+  
+  .ipu-cgpa-calc-result th {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .ipu-cgpa-calc-result tbody tr {
+    border-bottom: 1px solid var(--ipu-cgpa-calc-border);
+    transition: background-color 0.2s ease;
+  }
+  
+  .ipu-cgpa-calc-result tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .ipu-cgpa-calc-result tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.08);
+  }
+  
+  .ipu-cgpa-calc-result td {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+  }
+  
+  .ipu-cgpa-calc-result td:first-child {
+    font-weight: 600;
+    color: var(--ipu-cgpa-calc-accent-deep) !important;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .ipu-cgpa-calc-result table {
+      font-size: 0.85rem;
+    }
+  
+    .ipu-cgpa-calc-result th,
+    .ipu-cgpa-calc-result td {
+      padding: 0.6rem 0.4rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .ipu-cgpa-calc-result table {
+      display: block;
+      min-width: 500px;
+    }
+    .ipu-cgpa-calc-result th {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.3rem;
+    }
+    .ipu-cgpa-calc-result td {
+      padding: 0.5rem 0.3rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .ipu-cgpa-calc-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .ipu-cgpa-calc-button,
+    .ipu-pdf-btn,
+    .ipu-copy-btn,
+    .ipu-reset-btn {
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 400px) {
+    .ipu-cgpa-calc-row {
+      grid-template-columns: 1fr;
+    }
+    .ipu-cgpa-calc-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .ipu-cgpa-calc-result {
+      padding: 0.5rem;
+    }
+  }
+  /* ==============================
+  IPU CGPA Calculator Specific Css End
+  ============================== */
