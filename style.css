@@ -17,7 +17,6 @@ IPU CGPA Calculator Specific Css Start
   }
   *{
       box-sizing: border-box;
-      font-family: "Rubik", sans-serif;
   }
   .ipu-cgpa-calc-section {
     background-color: var(--ipu-cgpa-calc-white);
